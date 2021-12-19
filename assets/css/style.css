@@ -1,0 +1,613 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf) format('truetype');
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+::placeholder{
+    text-align: center;
+    font-size: 24px;
+    color: rgba(48, 48, 48, 0.8)
+}
+
+button{
+    background-color: #303030;
+    border: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgba(48, 48, 48, 0.8);
+    transition: 0.3s;
+}
+
+h1, h2, h3{
+    font-weight: normal;
+}
+
+a{
+    color: #303030;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+a:focus{
+    outline: none;
+}
+
+a:hover{
+    cursor: pointer;
+    background-color: #303030;
+    color: #fff;
+    transition: 0.3s;
+}
+
+html{
+    background-color: #efefef;
+    color: #303030;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+.wrapper{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* ===Класс позволяющий блоку становиться гибким, а потомкам переноситься с одной строки на другую=== */
+
+.blocks{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ===Header=== */
+
+header{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.logo-box{
+    height: 100%;
+    width: 50%;
+}
+
+.logo{
+    height: 100%;
+}
+
+.hamburger-menu{
+    width: 50%;
+    height: 100%;
+    z-index: 3;
+}
+
+.menu__toggle{
+    display: none;
+   width: 40px;
+   height: 40px;
+   top: 3%;
+    right: 5%;
+   -webkit-touch-callout: none;
+   opacity: 0;
+   position: absolute;
+}
+
+.menu__btn{
+    display: none;
+}
+
+.menu__box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+li a{
+    font-size: 22px;
+}
+
+/* ===Название компании и bg картинка=== */
+
+.company-name-sect{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/bg.jpg) no-repeat center/100%;
+}
+
+.company-name-sect::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+.company-title-block{
+    z-index: 2;
+}
+
+.company-title{
+    font-size: 60px;
+    color: #fff;
+}
+
+.company-title span{
+    color: #ff2259;
+}
+
+/* ===Девиз компании=== */
+
+.about-company-sect{
+    padding: 0 0 20px 0;
+}
+
+.company-slogan{
+    width: 100%;
+    height: 200px;
+    background-color: #303030;
+}
+
+.slogan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan h3{
+    color: #fff;
+    font-size: 30px;
+}
+
+.slogan h3 span{
+    color: #fff600;
+}
+
+/* ===Секция отзывов пользователей=== */
+
+.feedback{
+    padding: 20px 0 0 0;
+}
+
+.feedback h3{
+    font-size: 30px;
+}
+
+.feedback .blocks{
+    justify-content: space-around;
+    padding: 20px 0 0 0;
+}
+
+.feedback-block{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 10px;
+    border-radius: 20px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.author-info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.author-avatar-block{
+    width: 40px;
+    height: 100%;
+}
+
+.author-avatar{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.author-name-block{
+    padding: 0 0 0 10px;
+}
+
+.comment-block{
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px 0 0 0;
+}
+
+.comment{
+    font-size: 16px;
+}
+
+.approved-block{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.approved{
+    font-size: 16px;
+    position: relative;
+}
+
+.approved::before{
+    content: '';
+    position: absolute;
+    background: url(../images/svg/check.svg) no-repeat center/100%;
+    background-size: cover;
+    width: 21px;
+    height: 21px;
+    top: -5%;
+    left: -15%; 
+}
+
+/* ===Секция самых популярных товаров=== */
+
+.most_popular_goods-sect{
+    padding: 20px 0;
+}
+
+.most_popular_goods-sect h3{
+    text-align: center;
+    padding:  0 0 20px 0;
+}
+
+.goods{
+    justify-content: space-around;
+}
+
+.good-block{
+    padding: 10px;
+    background-color: #fff;
+    width: 48%;
+    border-radius: 20px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-block{
+    width: 100%;
+    height: 500px;
+}
+
+.good-image{
+    height: 100%;
+    width: 100%;
+}
+
+.cost-block{
+    padding: 20px 0 0 0;
+}
+
+.cost{
+    font-size: 24px;
+}
+
+.cost span{
+    font-size: 30px;
+    color: #f00;
+    font-family: 'Montserrat';
+}
+
+.description-block{
+    flex-grow: 1;
+}
+
+.description{
+    font-size: 24px;
+}
+
+.details{
+    height: 50px;
+    overflow: auto;
+    font-size: 20px;
+}
+
+.buy-block{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buy{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.form-sect{
+    padding: 20px 0;
+}
+
+form{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form p, form button, form input{
+    font-size: 24px;
+}
+
+form input, form button{
+    width: 80%;
+    height: 40px;
+    margin: 20px 0 0 0;
+}
+
+form input{
+    border: 1px solid #303030;
+}
+
+footer{
+    height: 80px;
+    background-color: #303030;
+    width: 100%;
+}
+
+footer .container{
+    display: flex;
+    align-items: center;
+}
+
+footer p{
+    color: #fff;
+    font-size: 18px;
+}
+
+@media(max-width: 1530px){
+    .company-name-sect{
+        background: url(../images/bg.jpg) no-repeat;
+    }
+}
+
+@media(max-width: 1200px){
+    .container{
+        max-width: 980px;
+    }
+
+    .company-slogan{
+        height: 150px;
+    }
+
+    .good-block{
+        height: 600px;
+    }
+
+    .img-block{
+        width: 100%;
+        height: 450px;
+    }
+
+    .cost-block{
+        padding: 5px 0 0 0;
+    }
+
+    .cost{
+        font-size: 18px;
+    }
+    
+    .cost span{
+        font-size: 20px;
+        color: #f00;
+        font-family: 'Montserrat';
+    }
+    
+    .description-block{
+        flex-grow: 1;
+        overflow: hidden;
+    }
+    
+    .description, .details{
+        font-size: 16px;
+        padding-left: 10px;
+    }
+}
+
+@media(max-width: 850px){
+    .container{
+        max-width: 500px;
+    }
+
+    .feedback-block{
+        width: 100%;
+        margin: 10px 0;
+        height: 200px;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .company-title{
+        font-size: 40px;
+    }
+
+    .slogan h3, .feedback h3{
+        font-size: 20px;
+    }
+
+    .good-block{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .menu__toggle{
+        display: block;
+        position: fixed;
+        opacity: 0;
+        z-index: 5;
+    }
+
+    .menu__btn{
+        display: flex; /* используем flex для центрирования содержимого */
+        align-items: center;  /* центрируем содержимое кнопки */
+        position: fixed;
+        top: 3%;
+        right: 5%;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 4;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #303030;
+        z-index: 4;
+    }
+
+    .menu__btn > span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu__btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: #ECEFF1;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+        z-index: 3;
+    }
+
+    .menu__box a{
+        font-size: 18px;
+    }
+
+    .menu__box a:hover {
+        background-color: #303030;
+    }
+
+    .menu__toggle:checked ~ .menu__btn > span {
+        transform: rotate(45deg);
+    }
+    .menu__toggle:checked ~ .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    .menu__toggle:checked ~ .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    .menu__toggle:checked ~ .menu__box {
+        visibility: visible;
+        right: 0;
+    }
+
+    .cost-block{
+        display: flex;
+        align-items: center;
+    }
+
+    .cost{
+        font-size: 18px;
+    }
+    
+    .cost span{
+        font-size: 20px;
+        color: #f00;
+        font-family: 'Montserrat';
+    }
+}
+
+@media(max-width: 500px){
+    .container{
+        max-width: none;
+    }
+
+    .company-slogan{
+        height: 100px;
+        text-align: center;
+    }
+
+    .slogan h3, .feedback h3{
+        font-size: 18px;
+    }
+
+    .comment-block{
+        padding: 10px 0 0 0;
+    }
+
+    .comment{
+        font-size: 14px;
+    }
+
+    .good-block{
+        height: 500px;
+    }
+
+    .img-block{
+        width: 100%;
+        height: 350px;
+    }
+
+    .cost-block{
+        display: block;
+    }
+
+    form p, form button, form input, ::placeholder{
+        font-size: 18px;
+    }
+}
